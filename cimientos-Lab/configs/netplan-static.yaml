@@ -1,0 +1,15 @@
+# Copia de configuración de red estática del Ubuntu
+network:
+  version: 2
+  ethernets:
+    ens33:
+      addresses:
+      - ${SERVER_IP}/24  # Sustituir por la IP creada en VMware con ""
+      nameservers:
+        addresses:
+        - 1.1.1.1
+        - 8.8.8.8
+        search: []
+      routes:
+      - to: "default"
+        via: ${GATEWAY_IP} # Sustituir por el GATEWAY creada en VMware con ""
