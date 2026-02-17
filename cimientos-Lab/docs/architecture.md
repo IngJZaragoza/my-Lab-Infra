@@ -6,7 +6,7 @@
 Ubuntu Server se ha consolidado como uno de los sistemas operativos más usados en el mundo de la ingeniería por su alta estabilidad a largo plazo, actualizaciones constantes y manejo práctico para personas afines. A estas fechas del 2026 se mantiene la versión 24.04, puede ser que meses después de que se haya escrito este documento (11/02/2026), Ubuntu muestre una nueva versión.
 
 **Recursos asignados**:
-
+--------------------------------------------
 - CPU: `2 vCPUs`. *Permite el manejo de procesos en paralelo, incluyendo tareas en segundo plano y actualizaciones del sistema.*
 - Memoria RAM: `2 GB`. *Valor mínimo recomendado para Ubuntu Server 24.04 sin entorno gráfico, optimizando el consumo de recursos del host.*
 - Almacenamiento: `Disco virtual de 40 GB`.
@@ -15,7 +15,7 @@ Ubuntu Server se ha consolidado como uno de los sistemas operativos más usados 
 ![](images/resourses.png)
 
 **Estrategia de Almacenamiento (LVM)**:
-
+--------------------------------------------
 Se implementa LVM (Logical Volume Management) en lugar de particiones primarias tradicionales. LVM proporciona flexibilidad para redimensionar volúmenes de forma dinámica (hot-resize) y permite la creación de snapshots previos a cambios críticos, como actualizaciones del kernel o modificaciones en aplicaciones.
 
 Distribución propuesta:
@@ -24,3 +24,8 @@ Distribución propuesta:
 - Swap: `2 GB`. "Respaldo de emergencia" que usa cuando se quede sin memoria RAM.
 
 ![](images/lvm.png)
+
+**Configuración de Red:**
+-------------------------------------------
+- Direccionamiento: IP estática (IPv4).
+- Servidores DNS: 1.1.1.1 y 8.8.8.8, con el fin de garantizar la resolución de nombres de manera independiente del router local.
