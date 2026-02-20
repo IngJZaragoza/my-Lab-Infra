@@ -29,3 +29,14 @@ Distribución propuesta:
 -------------------------------------------
 - Direccionamiento: IP estática (IPv4).
 - Servidores DNS: 1.1.1.1 y 8.8.8.8, con el fin de garantizar la resolución de nombres de manera independiente del router local.
+
+**Endurecimiento de Seguridad SSH**
+-------------------------------------------
+La seguridad constituye un pilar fundamental de esta infraestructura. Se aplican las siguientes políticas:
+- Algoritmo criptográfico: `Ed25519`. Preferido sobre RSA por su menor tamaño de clave y mayor resistencia frente a ataques conocidos.
+- Configuración del servicio (sshd_config):
+  - *PasswordAuthentication no*: Elimina los ataques de fuerza bruta basados en diccionario.
+  - *PermitRootLogin no*: Obliga al uso de cuentas con privilegios sudo, mejorando la trazabilidad y auditoría.
+  - *MaxAuthTries 3*: Limita estrictamente la cantidad de intentos de autenticación.
+
+En estos días se está realizando el endurecimiento de SSH
