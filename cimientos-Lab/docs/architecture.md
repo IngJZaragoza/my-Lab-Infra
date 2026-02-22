@@ -39,4 +39,9 @@ La seguridad constituye un pilar fundamental de esta infraestructura. Se aplican
   - *PermitRootLogin no*: Obliga al uso de cuentas con privilegios sudo, mejorando la trazabilidad y auditoría.
   - *MaxAuthTries 3*: Limita estrictamente la cantidad de intentos de autenticación.
 
-En estos días se está realizando el endurecimiento de SSH
+**Control de cambios y trazabilidad**
+--------------------------------------------
+- Estándar de mensajes: Conventional Commits.
+- Versionamiento: Todo cambio realizado en archivos de configuración bajo /etc/ debe reflejarse de forma equivalente en la carpeta /configs de este repositorio.
+
+*Todas las direcciones IP, nombres de usuario y llaves públicas mostradas en esta documentación son valores de ejemplo (placeholders) siguiendo las mejores prácticas de sanitización de infraestructura para evitar la exposición de la topología real del laboratorio.*
