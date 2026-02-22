@@ -1,0 +1,15 @@
+#Archivo de configuración de SSH con el hardening aplicado
+
+Include /etc/ssh/sshd_config.d/*.conf
+
+PermitRootLogin no
+MaxAuthTries 3
+PasswordAuthentication no
+
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+AcceptEnv LANG LC_*
+
+Subsystem	sftp	/usr/lib/openssh/sftp-server
