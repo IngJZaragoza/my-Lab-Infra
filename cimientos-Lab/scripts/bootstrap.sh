@@ -26,6 +26,7 @@ apt-get upgrade -y -qq
 # 5. Instalación de utilidades base para Infraestructura
 # Incluimos paquetes para gestión de red, monitoreo y edición
 DEPENDENCIES=(
+    "openssh-server"
     "ufw"
     "curl"
     "git"
@@ -34,7 +35,7 @@ DEPENDENCIES=(
     "net-tools"
     "software-properties-common"
 )
-apt-get install -y -qq "${DEPENDENCIES[@]}"
+apt-get install "${DEPENDENCIES[@]}" -y -qq
 
 # 6. Configuración de Firewall (UFW)
 # Implementación de política restrictiva por defecto
